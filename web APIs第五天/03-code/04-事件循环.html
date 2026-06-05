@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //js语言是单线程的，所谓单线程就是指js引擎在同一时间只能执行一个任务
+    console.log(1)
+    console.log(2)
+    setTimeout(function () {
+      console.log(3)
+    }, 0)
+    console.log(4);
+  </script>
+</body>
+
+</html>

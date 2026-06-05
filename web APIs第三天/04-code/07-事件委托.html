@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <p>我不需要变色</p>
+  </ul>
+  <script>
+    // 点击每个小li 当前li 文字变为红色
+    // 按照事件委托的方式  委托给父级，事件写到父级身上
+    // 1. 获得父元素
+    // 减少事件绑定的次数
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      // alert(11)
+      // this.style.color = 'red'，全部变色，全都冒泡到小li身上
+      // console.log(e.target) // e.target就是点击的元素
+      // e.target.style.color = 'red'
+      // 因为在一个ul里面可能会有很多的标签在，所以需要判断一下点击的元素是不是li，如果是li才改变颜色
+      if(e.target.tagName === 'LI'){
+        e.target.style.color = 'red'
+      }else if(e.target.tagName === 'P'){
+        e.target.style.color = 'blue'
+      
+      }
+    })
+  </script>
+</body>
+
+</html>
